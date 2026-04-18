@@ -15,6 +15,7 @@ import { TextReveal } from '@/components/ui/text-reveal';
 import { MagneticButton } from '@/components/ui/magnetic-button';
 import { SectionDivider } from '@/components/ui/section-divider';
 import { useToast } from '@/hooks/use-toast';
+import { submitContactForm } from '@/actions/contact';
 
 const contactSchema = z.object({
     name: z.string().min(2, 'El nombre debe tener al menos 2 caracteres'),
@@ -38,21 +39,29 @@ export function ContactoClient() {
     });
 
     const onSubmit = async (data: ContactFormValues) => {
-        const message = `*Hola, vengo de la web CAMEBOL Cochabamba*%0A%0A*Nombre:* ${data.name}%0A*Email:* ${data.email}%0A*Asunto:* ${data.subject}%0A*Mensaje:* ${data.message}`;
+        try {
+            const result = await submitContactForm(data);
 
-        // Clean phone number (remove +, spaces, etc)
-        const phone = FOOTER_DATA.whatsapp.replace(/\D/g, '');
-
-        const whatsappUrl = `https://wa.me/${phone}?text=${message}`;
-
-        window.open(whatsappUrl, '_blank');
-
-        toast({
-            title: 'Redirigiendo a WhatsApp...',
-            description: 'Se abrirá tu aplicación de mensajería para enviar el contacto.',
-        });
-
-        form.reset();
+            if (result.success) {
+                toast({
+                    title: '¡Mensaje enviado!',
+                    description: 'Hemos recibido tu mensaje. Te responderemos a la brevedad.',
+                });
+                form.reset();
+            } else {
+                toast({
+                    title: 'Error al enviar',
+                    description: 'No pudimos enviar tu mensaje. Intenta de nuevo o contáctanos por WhatsApp.',
+                    variant: 'destructive',
+                });
+            }
+        } catch {
+            toast({
+                title: 'Error al enviar',
+                description: 'No pudimos enviar tu mensaje. Intenta de nuevo o contáctanos por WhatsApp.',
+                variant: 'destructive',
+            });
+        }
     };
 
     return (

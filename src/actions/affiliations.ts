@@ -44,3 +44,35 @@ export async function updateAffiliationStatus(id: string, status: "approved" | "
         return { error: "Error al actualizar el estado" };
     }
 }
+
+export async function deleteAffiliation(id: string) {
+    await requireAdmin();
+
+    try {
+        const docRef = adminDb.collection("forms_affiliate").doc(id);
+        const doc = await docRef.get();
+
+        if (!doc.exists) {
+            return { error: "Solicitud no encontrada" };
+        }
+
+        const empresa = doc.data()?.empresa || id;
+        await docRef.delete();
+
+        await logActivity({
+            action: "delete",
+            resource: "affiliation",
+            details: `Deleted affiliation request: ${empresa}`,
+            userEmail: "admin",
+            resourceId: id,
+        });
+
+        revalidatePath("/admin/afiliaciones");
+        revalidatePath("/admin");
+
+        return { success: true };
+    } catch (error) {
+        console.error("Error deleting affiliation:", error);
+        return { error: "Error al eliminar la solicitud" };
+    }
+}

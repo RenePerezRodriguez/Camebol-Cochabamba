@@ -3,7 +3,7 @@
 import { useRequireAdmin } from "@/hooks/use-admin";
 import { auth } from "@/lib/firebase";
 import { signOut } from "firebase/auth";
-import { LayoutDashboard, Calendar, Users, FileText, LogOut, Menu, X, ChevronRight, Building2, Newspaper, ShieldCheck, Settings } from "lucide-react";
+import { LayoutDashboard, Calendar, Users, FileText, LogOut, Menu, X, ChevronRight, Building2, Newspaper, ShieldCheck, Settings, MessageSquare, Inbox } from "lucide-react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
@@ -26,6 +26,12 @@ const navigationGroups = [
             { name: "Asociadas", href: "/admin/asociadas", icon: Building2 },
             { name: "Afiliaciones", href: "/admin/afiliaciones", icon: FileText },
             { name: "Directorio", href: "/admin/directorio", icon: Users },
+        ]
+    },
+    {
+        title: "Comunicación",
+        items: [
+            { name: "Mensajes", href: "/admin/mensajes", icon: Inbox },
         ]
     },
     {
@@ -57,10 +63,10 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
     useEffect(() => {
         if (!loading && isAdmin && pathname === "/admin") {
             startTour([
-                { element: '#admin-sidebar', popover: { title: 'Tu Centro de Control', description: 'Este es el menú principal. Desde aquí puedes navegar para gestionar todo el contenido de CAMEBOL.', side: "right", align: 'start' } },
-                { element: '#admin-header-actions', popover: { title: 'Búsqueda Rápida', description: 'Usa este buscador rápido o presiona ⌘+K para encontrar usuarios, noticias u opciones al instante.', side: "bottom", align: 'end' } },
-                { element: '#admin-user-flow', popover: { title: 'Dashboard', description: 'Aquí verás un resumen rápido y estadísticas. Haz clic en Siguiente para empezar.', side: "top", align: 'center' } }
-            ], "dashboard-global");
+                { element: '#admin-sidebar', popover: { title: 'Tu Centro de Control', description: 'Desde aquí gestionas todo: asociadas, afiliaciones, mensajes de contacto, noticias, eventos y más.', side: "right", align: 'start' } },
+                { element: '#admin-header-actions', popover: { title: 'Búsqueda Rápida', description: 'Usa el buscador o presiona ⌘+K para encontrar cualquier sección al instante.', side: "bottom", align: 'end' } },
+                { element: '#admin-user-flow', popover: { title: 'Dashboard', description: 'Resumen rápido con estadísticas. Los mensajes de contacto y solicitudes de afiliación llegarán a tu correo y también podrás verlos aquí.', side: "top", align: 'center' } }
+            ], "dashboard-global-v2");
         }
     }, [loading, isAdmin, pathname, startTour]);
 

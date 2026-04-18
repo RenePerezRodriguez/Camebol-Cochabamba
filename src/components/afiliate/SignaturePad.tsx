@@ -19,9 +19,18 @@ const SignaturePad: React.FC<SignaturePadProps> = ({ onSave, hasSignature }) => 
   const [canvasWidth, setCanvasWidth] = useState(0);
 
   useEffect(() => {
-    if (containerRef.current) {
-      setCanvasWidth(containerRef.current.offsetWidth);
-    }
+    const el = containerRef.current;
+    if (!el) return;
+
+    const observer = new ResizeObserver((entries) => {
+      for (const entry of entries) {
+        const width = entry.contentRect.width;
+        if (width > 0) setCanvasWidth(width);
+      }
+    });
+
+    observer.observe(el);
+    return () => observer.disconnect();
   }, []);
 
   const clear = () => {

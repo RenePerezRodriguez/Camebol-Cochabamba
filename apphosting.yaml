@@ -4,3 +4,17 @@
 runConfig:
   minInstances: 1
   maxInstances: 4
+
+env:
+  - variable: SMTP_HOST
+    value: smtp.zoho.com
+  - variable: SMTP_PORT
+    value: "465"
+  - variable: SMTP_USER
+    value: info@camebolcochabamba.com
+  - variable: SMTP_PASS
+    secret: SMTP_PASS
+  - variable: SMTP_FROM
+    value: "CAMEBOL Cochabamba <info@camebolcochabamba.com>"
+  - variable: NOTIFICATION_EMAIL
+    value: info@camebolcochabamba.com
