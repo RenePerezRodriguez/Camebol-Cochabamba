@@ -1,0 +1,17 @@
+{
+    "firestore": {
+        "rules": "firestore.rules",
+        "indexes": "firestore.indexes.json"
+    },
+    "storage": {
+        "rules": "storage.rules"
+    },
+    "apphosting": [
+        {
+            "backendId": "studio",
+            "region": "us-central1",
+            "projectId": "studio-862112545-ad13b",
+            "rootDirectory": "."
+        }
+    ]
+}

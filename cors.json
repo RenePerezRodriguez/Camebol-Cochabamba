@@ -1,0 +1,18 @@
+[
+    {
+        "origin": [
+            "https://camebolcochabamba.com",
+            "https://camebol-cochabamba.web.app",
+            "https://camebol-cochabamba.firebaseapp.com"
+        ],
+        "method": [
+            "GET",
+            "POST",
+            "PUT",
+            "DELETE",
+            "HEAD",
+            "OPTIONS"
+        ],
+        "maxAgeSeconds": 3600
+    }
+]

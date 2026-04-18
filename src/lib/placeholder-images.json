@@ -1,0 +1,172 @@
+{
+  "placeholderImages": [
+    {
+      "id": "hero",
+      "description": "A group of diverse business women in a meeting.",
+      "imageUrl": "https://placehold.co/1080x720/c41661/white?text=CAMEBOL",
+      "imageHint": "business women"
+    },
+    {
+      "id": "about-us",
+      "description": "An office building representing the organization.",
+      "imageUrl": "https://placehold.co/1080x720/1f6b37/white?text=Nosotras",
+      "imageHint": "office building"
+    },
+    {
+      "id": "team-member-1",
+      "description": "Profile picture of a team member.",
+      "imageUrl": "https://placehold.co/400x400/c41661/white?text=Líder+1",
+      "imageHint": "woman portrait"
+    },
+    {
+      "id": "team-member-2",
+      "description": "Profile picture of a team member.",
+      "imageUrl": "https://placehold.co/400x400/1f6b37/white?text=Líder+2",
+      "imageHint": "woman portrait"
+    },
+    {
+      "id": "team-member-3",
+      "description": "Profile picture of a team member.",
+      "imageUrl": "https://placehold.co/400x400/770157/white?text=Líder+3",
+      "imageHint": "woman portrait"
+    },
+    {
+      "id": "team-member-4",
+      "description": "Profile picture of a team member.",
+      "imageUrl": "https://placehold.co/400x400/450072/white?text=Líder+4",
+      "imageHint": "woman portrait"
+    },
+    {
+      "id": "event-1",
+      "description": "A conference or networking event.",
+      "imageUrl": "https://placehold.co/1080x720/c41661/white?text=Evento+1",
+      "imageHint": "conference"
+    },
+    {
+      "id": "event-2",
+      "description": "A workshop or training session.",
+      "imageUrl": "https://placehold.co/1080x720/1f6b37/white?text=Evento+2",
+      "imageHint": "workshop"
+    },
+    {
+      "id": "alliance-logo-1",
+      "description": "Professional logo for a partner organization.",
+      "imageUrl": "https://placehold.co/400x200/cccccc/333333?text=Alianza+1",
+      "imageHint": "abstract logo"
+    },
+    {
+      "id": "alliance-logo-2",
+      "description": "Professional logo for a partner organization.",
+      "imageUrl": "https://placehold.co/400x200/cccccc/333333?text=Alianza+2",
+      "imageHint": "company logo"
+    },
+    {
+      "id": "alliance-logo-3",
+      "description": "Professional logo for a partner organization.",
+      "imageUrl": "https://placehold.co/400x200/cccccc/333333?text=Alianza+3",
+      "imageHint": "modern logo"
+    },
+    {
+      "id": "alliance-logo-4",
+      "description": "Professional logo for a partner organization.",
+      "imageUrl": "https://placehold.co/400x200/cccccc/333333?text=Alianza+4",
+      "imageHint": "brand logo"
+    },
+    {
+      "id": "alliance-logo-5",
+      "description": "Professional logo for a partner organization.",
+      "imageUrl": "https://placehold.co/400x200/cccccc/333333?text=Alianza+5",
+      "imageHint": "geometric logo"
+    },
+    {
+      "id": "alliance-logo-6",
+      "description": "Professional logo for a partner organization.",
+      "imageUrl": "https://placehold.co/400x200/cccccc/333333?text=Alianza+6",
+      "imageHint": "creative logo"
+    },
+    {
+      "id": "alliance-logo-7",
+      "description": "Professional logo for a partner organization.",
+      "imageUrl": "https://placehold.co/400x200/cccccc/333333?text=Alianza+7",
+      "imageHint": "simple logo"
+    },
+    {
+      "id": "alliance-logo-8",
+      "description": "Professional logo for a partner organization.",
+      "imageUrl": "https://placehold.co/400x200/cccccc/333333?text=Alianza+8",
+      "imageHint": "tech logo"
+    },
+    {
+      "id": "service-1",
+      "description": "Abstract image representing consulting.",
+      "imageUrl": "https://placehold.co/1080x720/c41661/white?text=Servicio+1",
+      "imageHint": "consulting"
+    },
+    {
+      "id": "service-2",
+      "description": "Abstract image representing networking.",
+      "imageUrl": "https://placehold.co/1080x720/1f6b37/white?text=Servicio+2",
+      "imageHint": "networking"
+    },
+    {
+      "id": "service-3",
+      "description": "Abstract image representing training.",
+      "imageUrl": "https://placehold.co/1080x720/770157/white?text=Servicio+3",
+      "imageHint": "training"
+    },
+    {
+      "id": "gallery-1",
+      "description": "Business women collaborating in a meeting",
+      "imageUrl": "/img/generated/main.png",
+      "imageHint": "business women collaborating"
+    },
+    {
+      "id": "gallery-2",
+      "description": "Speaker presenting at a conference.",
+      "imageUrl": "/img/generated/community-1.png",
+      "imageHint": "woman speaker"
+    },
+    {
+      "id": "gallery-3",
+      "description": "Group of women networking at an event.",
+      "imageUrl": "/img/generated/community-2.png",
+      "imageHint": "networking event"
+    },
+    {
+      "id": "gallery-4",
+      "description": "Close-up of a business meeting.",
+      "imageUrl": "/img/generated/community-3.png",
+      "imageHint": "business meeting"
+    },
+    {
+      "id": "gallery-5",
+      "description": "Women celebrating success.",
+      "imageUrl": "/img/generated/community-4.png",
+      "imageHint": "women success"
+    },
+    {
+      "id": "press-logo-1",
+      "description": "Logo of a newspaper.",
+      "imageUrl": "https://placehold.co/400x200/cccccc/333333?text=Prensa+1",
+      "imageHint": "newspaper logo"
+    },
+    {
+      "id": "press-logo-2",
+      "description": "Logo of a news channel.",
+      "imageUrl": "https://placehold.co/400x200/cccccc/333333?text=Prensa+2",
+      "imageHint": "news logo"
+    },
+    {
+      "id": "press-logo-3",
+      "description": "Logo of a television network.",
+      "imageUrl": "https://placehold.co/400x200/cccccc/333333?text=Prensa+3",
+      "imageHint": "tv logo"
+    },
+    {
+      "id": "press-logo-4",
+      "description": "Logo of a digital news outlet.",
+      "imageUrl": "https://placehold.co/400x200/cccccc/333333?text=Prensa+4",
+      "imageHint": "digital logo"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Helper: check admin custom claim
+    function isAdmin() {
+      return request.auth != null && request.auth.token.admin == true;
+    }
+
+    // Public collections — read-only for everyone, write for admin
+    match /associates/{docId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+    match /events/{docId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+    match /news/{docId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+    match /sectors/{docId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+    match /categories/{docId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+    match /banners/{docId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+    match /companies/{docId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+    match /members/{docId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    // Settings — public read for maintenance mode, write for admin
+    match /settings/{docId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    // Audit logs — admin only (read + write)
+    match /audit_logs/{docId} {
+      allow read, write: if isAdmin();
+    }
+
+    // Affiliations — admin only
+    match /affiliations/{docId} {
+      allow read, write: if isAdmin();
+    }
+
+    // Default: deny everything else
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

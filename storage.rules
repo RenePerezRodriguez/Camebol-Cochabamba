@@ -1,0 +1,12 @@
+rules_version = '2';
+
+service firebase.storage {
+  match /b/{bucket}/o {
+    // Public read for all files (needed for displaying images on the website)
+    match /{allPaths=**} {
+      allow read: if true;
+      // Write only allowed via Admin SDK (server-side)
+      allow write: if false;
+    }
+  }
+}

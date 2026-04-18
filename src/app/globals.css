@@ -1,0 +1,195 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 16 78% 7%;
+    /* #210a03 */
+    --card: 0 0% 100%;
+    --card-foreground: 16 78% 7%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 16 78% 7%;
+    --primary: 335 79% 42%;
+    /* #c41661 */
+    --primary-foreground: 0 0% 98%;
+    --secondary: 148 64% 27%;
+    /* #1f6b37 */
+    --secondary-foreground: 0 0% 98%;
+    --muted: 220 14.3% 95.9%;
+    --muted-foreground: 220 8.9% 43.1%;
+    --accent: 48 100% 50%;
+    /* #fdc400 */
+    --accent-foreground: 46 80% 15%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 335 79% 42%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 335 79% 60%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  ::selection {
+    background-color: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--background));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: hsl(var(--primary));
+    border-radius: 10px;
+    border: 2px solid hsl(var(--background));
+    background-clip: content-box;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: hsl(var(--primary) / 0.8);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground transition-colors duration-500;
+  }
+}
+
+/* React Big Calendar Overrides for Diamond Echoes Theme */
+.rbc-calendar {
+  @apply font-sans text-muted-foreground;
+}
+
+.rbc-header {
+  @apply py-4 font-headline font-semibold text-primary border-b border-white/10 uppercase tracking-wider text-sm;
+}
+
+.rbc-month-view {
+  @apply border border-white/10 rounded-xl bg-background/40 backdrop-blur-md overflow-hidden;
+}
+
+.rbc-day-bg {
+  @apply border-l border-white/5;
+}
+
+.rbc-off-range-bg {
+  @apply bg-muted/20;
+}
+
+.rbc-today {
+  @apply bg-primary/5;
+}
+
+.rbc-event {
+  @apply bg-primary border-none rounded-md shadow-sm text-xs font-medium px-2 py-1 transition-all hover:scale-105 hover:shadow-md;
+}
+
+.rbc-event.rbc-selected {
+  @apply bg-primary/80 ring-2 ring-white/20;
+}
+
+.rbc-toolbar {
+  @apply mb-6 flex-col md:flex-row gap-4;
+}
+
+.rbc-toolbar button {
+  @apply px-4 py-2 rounded-full border border-white/10 text-sm font-medium transition-all hover:bg-primary/10 hover:text-primary active:bg-primary/20 focus:outline-none focus:ring-2 focus:ring-primary/20;
+}
+
+.rbc-toolbar button.rbc-active {
+  @apply bg-primary text-white border-primary shadow-lg shadow-primary/20;
+}
+
+.rbc-toolbar-label {
+  @apply text-xl font-headline font-bold text-foreground capitalize;
+}
+
+.rbc-day-slot .rbc-time-column {
+  @apply border-r border-white/10;
+}
+
+.rbc-time-view {
+  @apply border border-white/10 rounded-xl bg-background/40 backdrop-blur-md overflow-hidden;
+}
+
+.rbc-time-header {
+  @apply border-b border-white/10;
+}
+
+.rbc-time-content {
+  @apply border-t border-white/10;
+}
+
+.rbc-timeslot-group {
+  @apply border-b border-white/5;
+}
+
+.rbc-current-time-indicator {
+  @apply bg-secondary h-[2px];
+}
+/* Driver.js Custom Styling for CAMEBOL */
+.camebol-tour-theme .driver-popover {
+  @apply rounded-xl bg-white border border-gray-100 shadow-xl;
+  font-family: inherit;
+}
+.camebol-tour-theme .driver-popover-title {
+  @apply text-lg font-bold text-gray-900 font-headline;
+}
+.camebol-tour-theme .driver-popover-description {
+  @apply text-sm text-gray-600 mt-2;
+}
+.camebol-tour-theme .driver-popover-progress-text {
+  @apply text-xs font-semibold text-[#c41661] uppercase tracking-wider;
+}
+.camebol-tour-theme .driver-popover-navigation-btns {
+  @apply mt-4 gap-2;
+}
+.camebol-tour-theme button.driver-popover-next-btn,
+.camebol-tour-theme button.driver-popover-prev-btn {
+  @apply rounded-full text-sm font-medium transition-all px-4 py-1.5 shadow-none;
+}
+.camebol-tour-theme button.driver-popover-next-btn {
+  @apply bg-[#c41661] text-white hover:bg-[#c41661]/90 border-0 hover:shadow-md;
+}
+.camebol-tour-theme button.driver-popover-prev-btn {
+  @apply bg-gray-100 text-gray-700 hover:bg-gray-200 border-0;
+}
+.camebol-tour-theme .driver-popover-close-btn {
+  @apply text-gray-400 hover:text-gray-900 transition-colors;
+}

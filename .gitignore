@@ -1,0 +1,57 @@
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+firebase-debug.log*
+debug_output.html
+
+# secrets
+firebase-admin-key*
+service-account*
+.env*.local
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# binaries
+*.exe
+
+# temp scripts & files
+fix-banners*.js
+fix-banners*.ts
+check-banners*.ts
+generate-icons.js
+generate-logo-crop.js
+scripts/
+
+# docs (informes locales)
+docs/informe-web.html
+docs/informe-web-v2.html
+
+# firebase
+.firebaseignore
+.firebaserc
